@@ -1,0 +1,24 @@
+{
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-plugin-html": "^3.2.2",
+    "http-server": "^0.10.0"
+  },
+  "license": "(c) onereach.com",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "or-test-example",
+      "email": "vladyslav.babenko@onereach.com"
+    }
+  ],
+  "name": "or-test-example",
+  "scripts": {
+    "format": "prettier --write",
+    "start": "http-server --cors --ext js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.1"
+}
