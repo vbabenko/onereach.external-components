@@ -22,7 +22,7 @@
     import email from './email.vue';
     import password from './password.vue';
 
-    const {required, jsExpressionNonEmptyString, validateIf} = validators;
+    const {required, jsExpressionNonEmptyString, generateValidators} = validators;
 
     export default {
         name       : 'editor-test-example',
@@ -30,9 +30,7 @@
         components : {email, password},
         computed   : {},
 
-        created () {
-            console.log('!!!!!!!!!!!!!!', this.$v);
-        },
+        created () {},
 
         data () {
             return {};
@@ -59,8 +57,8 @@
 
     export const validator = (template) => {
         return {
-            email    : {validateIf : validateIf(template.validateRequired, {required})},
-            password : {validateIf : validateIf(template.validateRequired, {required})},
+            email    : generateValidators(template.validateRequired, {required}),
+            password : generateValidators(template.validateRequired, {required}),
         };
     };
 
@@ -72,12 +70,12 @@
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-    @import '../scss/colors';
+    @import '../scss/colors.scss';
 
 </style>
 
 
 <style lang="scss" rel="stylesheet/scss">
-    @import '../scss/colors';
+    @import '../scss/colors.scss';
 
 </style>
